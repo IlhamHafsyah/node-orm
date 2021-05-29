@@ -13,12 +13,13 @@ const data = db.define(
     bergabung: Sequelize.DATE
   },
   {
-    freezeTableName: true
+    freezeTableName: true,
+    timestamps: false,
+    createdAt: false,
+    updatedAt: false
   }
 )
 
 // Export model Product
 data.removeAttribute('id')
-data.removeAttribute('createdAt')
-data.removeAttribute('updatedAt')
 module.exports = data
