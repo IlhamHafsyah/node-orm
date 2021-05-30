@@ -4,7 +4,7 @@ const helper = require('../helper/response')
 module.exports = {
   getPemain: async (req, res) => {
     try {
-      const result = await data.findAll()
+      const result = await data.findAll({ attributes: ['nama', 'posisi'] })
       return helper.response(res, 200, 'Success get all pemain', result)
     } catch (err) {
       return helper.response(res, 400, 'Bad Request')
